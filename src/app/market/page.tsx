@@ -4,10 +4,8 @@ import MiniNavBar from "@/components/MiniNavBar";
 import FaqAccordion from "@/components/data/Data";
 import Info from "@/components/data/Info";
 import SearchTab from "@/components/data/SearchTab";
-
-const Page = () => {
+const page = () => {
   const [showInfo, setShowInfo] = useState(false);
-
   return (
     <div className="w-full">
       <MiniNavBar />
@@ -23,4 +21,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;
