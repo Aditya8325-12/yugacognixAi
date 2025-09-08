@@ -1,6 +1,6 @@
 import React from "react";
 
-const MiniNavBar = () => {
+const MiniNavBar = ({ onSummaryClick }) => {
   return (
     <div className="w-full pt-6 flex justify-between items-center">
       <div className="flex justify-start items-center gap-2 ">
@@ -31,7 +31,10 @@ const MiniNavBar = () => {
       </div>
 
       <div className="flex  justify-end items-center gap-2  text-sm">
-        <button className="px-4 py-1.5   bg-gradient-to-r  from-sky-400 to-blue-600  text-white rounded-md hover:bg-sky-700 transition cursor-pointer">
+        <button
+          onClick={onSummaryClick}
+          className="px-4 py-1.5   bg-gradient-to-r  from-sky-400 to-blue-600  text-white rounded-md hover:bg-sky-700 transition cursor-pointer"
+        >
           {" "}
           Summary
         </button>

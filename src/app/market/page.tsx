@@ -4,21 +4,32 @@ import MiniNavBar from "@/components/MiniNavBar";
 import FaqAccordion from "@/components/data/Data";
 import Info from "@/components/data/Info";
 import SearchTab from "@/components/data/SearchTab";
-const page = () => {
+import Summary from "@/components/data/Summary";
+import { GrPowerCycle } from "react-icons/gr";
+import { MdFileDownload } from "react-icons/md";
+import { FaShareNodes } from "react-icons/fa6";
+import { TiPinOutline } from "react-icons/ti";
+const Page = () => {
   const [showInfo, setShowInfo] = useState(false);
+  const [showSummary, setShowSummary] = useState(false);
   return (
     <div className="w-full">
-      <MiniNavBar />
+      <MiniNavBar onSummaryClick={() => setShowSummary(true)} />
       <div className="w-full flex justify-between h-[82vh] pt-4 gap-4">
-        <div className="w-3/12 h-full">
+        <div className="w-3/12 relative h-full">
           <FaqAccordion />
         </div>
 
-        {/* Conditionally render */}
-        {showInfo ? <Info /> : <SearchTab onEnter={() => setShowInfo(true)} />}
+        {showSummary ? (
+          <Summary onClose={() => setShowSummary(false)} />
+        ) : showInfo ? (
+          <Info />
+        ) : (
+          <SearchTab onEnter={() => setShowInfo(true)} />
+        )}
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;
